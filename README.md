@@ -15,7 +15,7 @@
 
 # OpenGL Scientific Paper
 
-This repository contains a scientific paper about rendering with OpenGL, C++ and GLFW. The source code of the project is also included in the repository.
+This repository contains a scientific paper about rendering with <a href="https://www.opengl.org/" target="blank">OpenGL</a>, C++ and <a href="https://www.glfw.org/" target="blank">GLFW</a>. The source code of the project is also included in the repository.
 
 The paper was written in [Asciidoc](https://asciidoc.org/), using [this](https://github.com/Alwinator/thesis-template) template.
 
