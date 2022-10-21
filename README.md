@@ -1,11 +1,11 @@
-<div style="display: flex; justify-content: center;">
+<p align="center">
     <a href="https://www.opengl.org/" target="blank">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Opengl-logo.svg/1920px-Opengl-logo.svg.png" height="150" alt="OpenGL"/>
     </a>
-    <a style="margin-left: 80px;">
+    <a>
         <img src="https://brandslogos.com/wp-content/uploads/images/large/c-logo.png" height="150" alt="C++"/>
     </a>
-</div>
+</p>
 
 <p align="center">
     <img src="https://img.shields.io/github/directory-file-count/Luktronic/OpenGL-Scientific-Paper.svg" alt="File Count" />
