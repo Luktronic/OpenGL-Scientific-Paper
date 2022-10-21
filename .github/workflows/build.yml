@@ -29,7 +29,7 @@ jobs:
         run: mkdir -p /work/build
 
       - name: Build PDF
-        run: chmod +x ./paper/scripts/asciidoc-to-pdf.sh && ./paper/scripts/asciidoc-to-pdf.sh
+        run: cd ./paper && chmod +x ./scripts/asciidoc-to-pdf.sh && ./scripts/asciidoc-to-pdf.sh
         shell: bash
 
       - name: Archive production artifacts
