@@ -10,8 +10,8 @@
 <p align="center">
     <img src="https://img.shields.io/github/directory-file-count/Luktronic/OpenGL-Scientific-Paper.svg" alt="File Count" />
     <img src="https://img.shields.io/github/repo-size/Luktronic/OpenGL-Scientific-Paper.svg" alt="Repo Size" />
+        <img src="https://github.com/Luktronic/OpenGL-Scientific-Paper/actions/workflows/build.yml/badge.svg" alt="Thesis Build"/>
 </p>
-[![Build](https://github.com/Alwinator/thesis-template/actions/workflows/build.yml/badge.svg)](https://github.com/Luktronic/OpenGL-Scientific-Paper/actions/workflows/build.yml)
 
 # OpenGL Scientific Paper
 
