@@ -18,7 +18,7 @@ jobs:
         run: pip3 install --upgrade pip setuptools wheel
 
       - name: Install pip packages
-        run: pip3 install diagrams graphviz-py matplotlib
+        run: pip3 install diagrams graphviz-py
 
       - name: Checkout repository
         uses: actions/checkout@v2
