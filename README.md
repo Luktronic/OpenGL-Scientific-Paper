@@ -37,7 +37,7 @@ The paper was written in [Asciidoc](https://asciidoc.org/), using [this](https:/
 Firstly, clone this GitHub repository recursively:
 
 ```sh
-git clone --recursive https://github.com/Luktronic/OpenGL-Scientific-Paper.git
+> git clone --recursive https://github.com/Luktronic/OpenGL-Scientific-Paper.git
 ```
 
 ---
@@ -59,7 +59,7 @@ Make sure you have cloned all the **submodules**. If you have not cloned this re
 Open the terminal (Powershell or CMD) in the `/project/setup` directory. After that, run the `setup.bat` file
 
 ```sh
-.\setup.bat
+> .\setup.bat
 ```
 
 **You have to run the script from the `/project/setup` subdirectory, otherwise it will not work!**  
