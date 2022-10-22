@@ -27,9 +27,18 @@ The paper was written in [Asciidoc](https://asciidoc.org/), using [this](https:/
 
 ### Project
 
+- Git
+- Python (required for build)
+
 **Coming soon**
 
 ## How to build
+
+Firstly, clone this GitHub repository recursively:
+
+```sh
+git clone --recursive https://github.com/Luktronic/OpenGL-Scientific-Paper.git
+```
 
 ### Build Paper
 
@@ -37,4 +46,26 @@ See <a href="https://github.com/Alwinator/thesis-template#getting-started" targe
 
 ### Build Project
 
-**Coming soon**
+Make sure you have cloned all the **submodules**. If you have not cloned this repository recursively, you can use `git submodule update --init` to clone the submodules afterwards.
+
+**Windows:**
+Open the terminal (Powershell or CMD) in the `/project/setup` directory. After that, run the `setup.bat` file
+
+```sh
+.\setup.bat
+```
+
+**You have to run the script from the `/project/setup` subdirectory, otherwise it will not work!**
+The script should install the necessary Python modules, as well as Premake. It should also execute Premake and generate a Visual Studio 2022 project.  
+
+**MacOS:**
+Not tested yet - coming soon!
+
+**Linux:**
+Not tested yet - coming soon!
+
+## Disclaimer
+
+Many parts of this project - especially the Premake build pipeline - are heavily inspired by [TheCherno's](https://www.youtube.com/c/TheChernoProject) [Hazel Engine](https://github.com/TheCherno/Hazel) project on [YouTube](https://www.youtube.com/playlist?list=PLlrATfBNZ98dC-V-N3m0Go4deliWHPFwT). I have taken some build scripts and modified them for my own use, so credits go to him and his amazing work!
+
+I am also using [this](https://github.com/Alwinator/thesis-template) Asciidoc thesis template, so shoutouts to the creator [Alwinator](https://github.com/Alwinator)!

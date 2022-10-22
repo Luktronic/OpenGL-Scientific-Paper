@@ -12,6 +12,7 @@
 
 # General
 *.zip
+__pycache__/
 
 # ----- C++ -----
 
