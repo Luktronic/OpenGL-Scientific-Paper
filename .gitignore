@@ -3,6 +3,15 @@
 .idea/
 *.iml
 .vs/
+*.sln
+*.vcxproj
+*.vcxproj.*
+
+# Binary directories
+**/bin*/
+
+# General
+*.zip
 
 # ----- C++ -----
 

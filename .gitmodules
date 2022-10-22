@@ -1,0 +1,3 @@
+[submodule "project/vendor/glfw"]
+	path = project/vendor/glfw
+	url = https://github.com/Luktronic/glfw.git
