@@ -66,6 +66,23 @@ Open the terminal (Powershell or CMD) in the `/project/setup` directory. After t
 
 The script should install the necessary Python modules, as well as Premake. It should also execute Premake and generate a Visual Studio 2022 project.  
 
+You can then simply run or build the project in Visual Studio by opening the `OpenGLPaper.sln` file.
+
+If you don't want to use Visual Studio, you can also build the project with `MsBuild`. Just type the following command into Powershell/CMD:
+
+```sh
+> msbuild .\OpenGLPaper.sln 
+```
+
+If you don't have `MsBuild` in your `PATH`, you will not be able to execute the `msbuild` command. If that is the case, add the following directory to your `PATH`:
+
+```
+[Your Visual Studio Installation]\Msbuild\Current\Bin
+```
+
+Now you should be able to run `msbuild` in the terminal.
+
+After all of that, you will find an `OpenGLPaper.exe` executable in the `/project/bin` directory.
 #### MacOS
 
 Not tested yet - coming soon!
