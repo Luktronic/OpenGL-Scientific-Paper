@@ -48,20 +48,26 @@ See <a href="https://github.com/Alwinator/thesis-template#getting-started" targe
 
 Make sure you have cloned all the **submodules**. If you have not cloned this repository recursively, you can use `git submodule update --init` to clone the submodules afterwards.
 
-**Windows:**
+---
+
+#### Windows
+
 Open the terminal (Powershell or CMD) in the `/project/setup` directory. After that, run the `setup.bat` file
 
 ```sh
 .\setup.bat
 ```
 
-**You have to run the script from the `/project/setup` subdirectory, otherwise it will not work!**
+**You have to run the script from the `/project/setup` subdirectory, otherwise it will not work!**  
+
 The script should install the necessary Python modules, as well as Premake. It should also execute Premake and generate a Visual Studio 2022 project.  
 
-**MacOS:**
+#### MacOS
+
 Not tested yet - coming soon!
 
-**Linux:**
+#### Linux
+
 Not tested yet - coming soon!
 
 ## Disclaimer
