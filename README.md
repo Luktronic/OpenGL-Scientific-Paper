@@ -40,9 +40,13 @@ Firstly, clone this GitHub repository recursively:
 git clone --recursive https://github.com/Luktronic/OpenGL-Scientific-Paper.git
 ```
 
+---
+
 ### Build Paper
 
 See <a href="https://github.com/Alwinator/thesis-template#getting-started" target="blank">here</a>.
+
+---
 
 ### Build Project
 
