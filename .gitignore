@@ -1,20 +1,23 @@
 # IDEs / Editors
-.vscode/*
-.idea/
+**/.vscode/*
+**/.idea/
 *.iml
-.vs/
+**/.vs/
 *.sln
 *.vcxproj
 *.vcxproj.*
 
 # Binary directories
 **/bin*/
+**/Makefile
 
 # General
 *.zip
 __pycache__/
 
 # ----- C++ -----
+
+*.pdb
 
 # Prerequisites
 *.d
