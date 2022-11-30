@@ -10,7 +10,7 @@ namespace OpenGLTestProject {
 			void initializeCallbacks();
 			void closeWindow();
 
-			static Window* createWindow(int width, int height, const char* title, bool isFullscreen);
+			static Window* createWindow(int width, int height, const char* title, bool windowedFullscreen, bool isFullscreen);
 			static void freeWindow(Window* window);
 
 		

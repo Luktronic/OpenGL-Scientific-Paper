@@ -10,7 +10,8 @@ using namespace OpenGLTestProject;
 const int windowWidth = 1280;
 const int windowHeigth = 720;
 const char* windowTitle = "OpenGL Test Project";
-const bool isFullscreen = true;
+const bool windowedFullscreen = false;
+const bool isFullscreen = false; //If this is true, window is always fullscreen (overrides windowedFullscreen)
 
 int exitWithError(const char* msg) {
 	printf(msg);
@@ -24,7 +25,7 @@ int main() {
 		return exitWithError("GLFW initialization failed\n");
 	}
 
-	Window* window = Window::createWindow(windowWidth, windowHeigth, windowTitle, isFullscreen);
+	Window* window = Window::createWindow(windowWidth, windowHeigth, windowTitle, windowedFullscreen, isFullscreen);
 	if (window == nullptr)
 		return exitWithError("Couldn't initialize window");
 	window->initializeCallbacks();
@@ -41,7 +42,7 @@ int main() {
 	while (!glfwWindowShouldClose(window->glfwWindow)) {
 
 		//Sets the pixels to this color value when clearing the buffers with glClear()
-		glClearColor(255.0f / 255.0f, 119.0f / 255.0f, 110.0f / 255.0f, 1.0f);
+		glClearColor(111.0f / 255.0f, 84.0f / 255.0f, 76.0f / 255.0f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
 
 		if (Input::isKeyPressed(GLFW_KEY_ESCAPE))

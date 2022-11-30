@@ -25,7 +25,7 @@ namespace OpenGLTestProject {
 
 
 
-	Window* Window::createWindow(int width, int height, const char* title, bool isFullscreen) {
+	Window* Window::createWindow(int width, int height, const char* title, bool windowedFullscreen, bool isFullscreen) {
 
 		//Ensure that glfw uses opengl version 4.6
 		glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
@@ -37,13 +37,20 @@ namespace OpenGLTestProject {
 		//create window
 		Window* window = new Window();
 
-		GLFWmonitor* primaryMonitor = isFullscreen ? glfwGetPrimaryMonitor() : nullptr;
-		if (primaryMonitor != nullptr) {
-			const GLFWvidmode* vidmode = glfwGetVideoMode(primaryMonitor);
+		//If we want windowedFullscreen or Fullscreen, get the primary monitor so we can get the width/heigth
+		GLFWmonitor* monitor = (windowedFullscreen || isFullscreen) ? glfwGetPrimaryMonitor() : nullptr;
+		
+		if (monitor != nullptr && !isFullscreen) {
+			const GLFWvidmode* vidmode = glfwGetVideoMode(monitor);
 			height = vidmode->height;
 			width = vidmode->width;
 		}
-		window->glfwWindow = glfwCreateWindow(width, height, title, primaryMonitor, nullptr);
+
+		//If we don't want to have fullscreen, set monitor to null again
+		//(Glfw creates a fullscreen window if we specify a monitor)
+		if(!(isFullscreen || windowedFullscreen)) monitor = nullptr;
+
+		window->glfwWindow = glfwCreateWindow(width, height, title, monitor, nullptr);
 
 		if (window->glfwWindow == nullptr) {
 			printf("Failed to create window!\n");
