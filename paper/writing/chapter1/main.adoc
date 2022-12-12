@@ -1,47 +1,6 @@
-=== Abstract
-Hello World
+=== What is Graphics Rendering?
+At the beginning of computer technology, computer scientists created the first *Operating Systems*, which back then where mostly text based. The user would input commands into a *Command Line Interface* (CLI) and therefore tell the computer what to do. After some time, companies wanted to make computers accessible to a wider audience. Because of that, companies started to create Operating Systems with *Graphical User Interfaces* (GUIs) in order to make computer interactions easier for the average person. Nowadays, we mainly communicate through GUIs with our machines.
 
-=== Heading 1
-Hello World
+With the introduction of the GUI technology, computer scientists were confronted with new challenges. Computing graphic data required a great amount of complex mathematic calculations. In addition to that, monitors evolved to having higher and higher resolutions, resulting in millions of pixels per monitor, whose colour values all needed to be calculated independently.
 
-==== My Cite
-This is a citation. cite:[CRAFT]
-
-==== A formula
-latexmath:[\qquad \frac{a}{b} = 438]
-
-// A page break
-<<<
-
-==== A table
-.My new Table (Source: {author})
-[cols="1,1"]
-|===
-|Cell in column 1, row 1
-|Cell in column 2, row 1
-
-|Cell in column 1, row 2
-|Cell in column 2, row 2
-
-|Cell in column 1, row 3
-|Cell in column 2, row 3
-|===
-
-=== Heading 2
-Hello World
-
-=== Heading 3
-Hello World
-
-=== Heading X
-Hello World
-
-.My Python Code (Source: {author})
-[source,python,linenums=implicit]
-----
-if True:
-    print("Hello World")
-----
-
-=== Conclusion
-Hello World
+In those times, hardware performance was very limited. The mathematic calculations simply required too much processing power of the CPU. The solution to this problem was the invention of a new hardware component, specialising in concurrent processing of graphic data. This new component was called the *Graphics Processing Unit* (GPU).

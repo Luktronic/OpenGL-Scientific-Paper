@@ -41,8 +41,11 @@ toc::[]
 
 :sectnums:
 
-== Test: hello
-This is a test
+include::title/graphics-rendering.adoc[]
+
+<<<
+
+include::chapter1/main.adoc[]
 
 <<<
 
@@ -50,7 +53,7 @@ include::title/opengl-introduction.adoc[]
 
 <<<
 
-include::chapter1/main.adoc[]
+include::chapter2/main.adoc[]
 
 <<<
 
