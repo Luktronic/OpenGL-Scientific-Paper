@@ -4,3 +4,29 @@ At the beginning of computer technology, computer scientists created the first *
 With the introduction of the GUI technology, computer scientists were confronted with new challenges. Computing graphic data required a great amount of complex mathematic calculations. In addition to that, monitors evolved to having higher and higher resolutions, resulting in millions of pixels per monitor, whose colour values all needed to be calculated independently.
 
 In those times, hardware performance was very limited. The mathematic calculations simply required too much processing power of the CPU. The solution to this problem was the invention of a new hardware component, specialising in concurrent processing of graphic data. This new component was called the *Graphics Processing Unit* (GPU).
+
+The GPU is specialized in parallel computing of immense amounts of data, needed to calculate the colour of each pixel on the monitor. With that, digital images are created. This process is called *rendering*. A program which handles rendering is called a *renderer*.
+
+=== Rendering Basics
+
+==== Graphics pipeline
+
+The complete process of turning digital data into an image on a monitor is called a *graphics pipeline* or *rendering pipeline*. However, rendering an image to the screen is only the last part of this pipeline.
+
+//TODO: add image of rendering pipeline
+
+Before an image can be rendered, the required data must undergo several different calculations, for example transformation or lighting. While some of these calculations are fundamental and need to be understood in order to successfully render an image to the screen, this paper will mainly focus on the rendering itself and not go into great detail about additional processes.
+
+There are multiple ways to render/process model data, such as *raytracing* or *raycasting*. The most common one however, is *polygon rendering*, which we will focus 
+on.
+
+==== Vertices
+//TODO: explain vertices
+
+==== Polygons
+
+As the name suggests, polygon rendering breaks down geometry to the most simple geometric shape: *polygons* - or as we usually know them - *triangles*. The reason polygons are the most simple geometric shape usable for rendering, is because they can be defined by only 3 *vertices*, while rectangles for example are defined by 4 vertices. One can even observe that rectangles are actually made up of two polygons. 
+
+//TODO: add image of polygon and rectangle
+
+In conclusion, polygons can be represented by only 3 vertices and are therefore the simplest geometric shape which defines a gemoetric area. Any other geometric shape can be constructed by putting several polygons together.
