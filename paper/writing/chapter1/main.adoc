@@ -21,7 +21,15 @@ There are multiple ways to render/process model data, such as *raytracing* or *r
 on.
 
 ==== Vertices
-//TODO: explain vertices
+
+A vertex is, in its most basic form, a simple point in a 2D or 3D world/coordinate system. It is defined with the same amount of numbers that the world has dimensions. In simpler words: if the world is 2D, a vertex consists of 2 numbers, while if the world is 3D, is is made out of 3 numbers.
+
+Assuming the used world has 2 dimensions, an example vertex would look like this:
+
+//TODO: check if this works
+latexmath:[{v} = \[10, 15\]]
+
+Vertices can contain even more data than that. Most of the time vertices also bring a vector, which tells us in which direction the vertex is facing. This data is especially useful for lighting, because with the vertex direction we can calculate in which direction the light should be reflected. But the essential message is that vertices are just points in 2D/3D space, defined by coordinates.
 
 ==== Polygons
 
