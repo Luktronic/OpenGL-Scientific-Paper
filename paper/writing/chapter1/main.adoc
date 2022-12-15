@@ -38,3 +38,13 @@ As the name suggests, polygon rendering breaks down geometry to the most simple 
 //TODO: add image of polygon and rectangle
 
 In conclusion, polygons can be represented by only 3 vertices and are therefore the simplest geometric shape which defines a gemoetric area. Any other geometric shape can be constructed by putting several polygons together.
+
+==== Shader
+
+Now that vertices and polygons have been explained, the most important data for rendering an image is present. Nevertheless, sending that data alone to the GPU will not result in a clear triangle on the screen. For example, the GPU does not know in which colour it should paint the pixels of the triangle. This is where *shaders* come into the game.
+
+*Shader* is the name for a program that runs on the GPU. Theoretically, one could do anything with a shader, but usually it is used for computing the complex visual data, like lighting or the colours of the pixels, but they can also be used to compute geometric transformations. 
+
+There are mainly two types of shaders: *fragment shaders* (sometimes also called *pixel shaders*) and *vertex shaders*.
+
+*Fragment shaders* are run independently once for every pixel (fragment) on the screen. They are mainly used to calculate the pixel's final colour. 
