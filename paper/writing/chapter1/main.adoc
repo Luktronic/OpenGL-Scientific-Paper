@@ -26,7 +26,6 @@ A vertex is, in its most basic form, a simple point in a 2D or 3D world/coordina
 
 Assuming the used world has 2 dimensions, an example vertex would look like this:
 
-//TODO: check if this works
 latexmath:[{v} = \[10, 15\]]
 
 Vertices can contain even more data than that. Most of the time vertices also bring a vector, which tells us in which direction the vertex is facing. This data is especially useful for lighting, because with the vertex direction we can calculate in which direction the light should be reflected. But the essential message is that vertices are just points in 2D/3D space, defined by coordinates.
@@ -43,7 +42,7 @@ In conclusion, polygons can be represented by only 3 vertices and are therefore 
 
 Now that vertices and polygons have been explained, the most important data for rendering an image is present. Nevertheless, sending that data alone to the GPU will not result in a clear triangle on the screen. For example, the GPU does not know in which colour it should paint the pixels of the triangle. This is where *shaders* come into the game.
 
-*Shader* is the name for a program that runs on the GPU. Theoretically, one could do anything with a shader, but usually it is used for computing the complex visual data, like lighting or the colours of the pixels, but they can also be used to compute geometric transformations. 
+*Shader* is the name for a program that runs on the GPU. Theoretically, one could do anything with a shader, but usually it is used for computing complex visual data, like lighting or the colours of the pixels, but they can also be used to compute geometric transformations. 
 
 There are mainly two types of shaders: *fragment shaders* (sometimes also called *pixel shaders*) and *vertex shaders*.
 
