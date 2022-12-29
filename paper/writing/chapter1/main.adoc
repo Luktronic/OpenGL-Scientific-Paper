@@ -35,8 +35,7 @@ Vertices can contain even more data than that. Most of the time vertices also br
 
 As the name suggests, polygon rendering breaks down geometry to the most simple geometric shape: *polygons* - or as we usually know them - *triangles*. The reason polygons are the most simple geometric shape usable for rendering, is because they can be defined by only 3 *vertices*, while rectangles for example are defined by 4 vertices. One can even observe that rectangles are actually made up of two polygons. 
 
-//TODO: add image of polygon and rectangle
-.A simple Polygon (Source: {author})
+.A simple polygon (Source: {author})
 image::chapter1/Polygons.svg[width=80%,format=svg]
 
 In conclusion, polygons can be represented by only 3 vertices and are therefore the simplest geometric shape which defines a gemoetric area. Any other geometric shape can be constructed by putting several polygons together.
