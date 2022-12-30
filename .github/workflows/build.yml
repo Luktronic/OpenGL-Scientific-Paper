@@ -19,36 +19,32 @@ jobs:
 
       - name: Install pip packages
         run: pip3 install diagrams graphviz-py
+      
+      - name: Create work directory
+        run: mkdir -p /work/scripts && cd /work
 
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           lfs: true
 
+      - name: Copy project to work directory
+        run: cp -r . /work
+
+      - name: Copy build script to work directory
+        run: cp ./paper/scripts/asciidoc-to-pdf.sh /work/scripts/asciidoc-to-pdf.sh
+
+      - name: ls
+        run: cd /work
+
       - name: Create build directory
-        run: mkdir -p /work/paper/build
-
-      - name: Print stuff
-        run: ls -a
-      
-      - name: pwd
-        run: pwd 
-      
-      - name: go to paper
-        run: cd ./paper
-        shell: bash
-
-      - name: ls paper
-        run: ls -a
-        shell: bash
-
-      - name: pwd paper
-        run: pwd
-        shell: bash
+        run: mkdir -p ./paper/build
+        working-directory: /work
 
       - name: Build PDF
-        run: cd ./paper && ls && chmod +x ./scripts/asciidoc-to-pdf.sh && ./scripts/asciidoc-to-pdf.sh
+        run: chmod +x ./scripts/asciidoc-to-pdf.sh && ./scripts/asciidoc-to-pdf.sh
         shell: bash
+        working-directory: /work
 
       - name: Archive production artifacts
         uses: actions/upload-artifact@v2
