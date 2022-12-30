@@ -23,9 +23,6 @@ namespace OpenGLTestProject {
 
 	}
 
-
-
-	// tag::createWindow[]
 	Window* Window::createWindow(int width, int height, const char* title, bool windowedFullscreen, bool isFullscreen) {
 
 		//Ensure that glfw uses opengl version 4.6
@@ -33,7 +30,6 @@ namespace OpenGLTestProject {
 		glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 6);
 		//Core profile means we will not use deprecated functions
 		glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-
 
 		//create window
 		Window* window = new Window();
@@ -59,15 +55,11 @@ namespace OpenGLTestProject {
 			return nullptr;
 		}
 
-
-
 		//Sets our window as current context
 		glfwMakeContextCurrent(window->glfwWindow);
 
 		return window;
 	}
-	// end::createWindow[]
-
 
 	void Window::freeWindow(Window* window) {
 		if (window) {

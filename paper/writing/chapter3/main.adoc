@@ -1,25 +1,27 @@
 === Setup
 
-In this example I will implement a simple rendering example using OpenGL in C++. As the windowing system I will use https://www.glfw.org/[GLFW] footnote:[https://www.glfw.org/], as well as https://glad.dav1d.de/[Glad] for loading the OpenGL functions.
+In this example I will implement a simple rendering example using OpenGL in C++. As the windowing system I will use https://www.glfw.org/[GLFW] cite:[GLFW], as well as https://glad.dav1d.de/[Glad] for loading the OpenGL functions.
 
-GLFW can be cloned from its https://github.com/glfw/glfw[GitHub repository] footnote:[https://github.com/glfw/glfw] and then be included in your project.
+GLFW can be cloned from its https://github.com/glfw/glfw[GitHub repository] cite:[GLFWREPO] and then be included in your project.
 
-Glad can be downloaded from https://glad.dav1d.de/[this] footnote:[https://glad.dav1d.de/] site. It can then be included manually in the project.
+Glad can be downloaded from https://glad.dav1d.de/[this] cite:[Glad] site. It can then be included manually in the project.
 
 I will not go into detail how to include libraries in C++.
 
 ****
-The website https://learnopengl.com/[learnopengl.com] has a an https://learnopengl.com/Getting-started/Creating-a-window[in-depth guide] footnote:[https://learnopengl.com/Getting-started/Creating-a-window] about how to set up a project using the same libraries.
+The website https://learnopengl.com/[learnopengl.com] has a an https://learnopengl.com/Getting-started/Creating-a-window[in-depth guide] cite:[LearnOpenGl] about how to set up a project using the same libraries.
 ****
 
 ==== Creating a window
 
 At first, I created my own `Window` class, which should help us with managing our Window. In this class I created a function which creates a GLFW Window.
 
-.createWindow() function
-====
-[source, c++]
+Using this class, I am creating a new GLFW window and setting it up properly.
+
+.Initializing the GLFW window
+[source, c++, indent=0]
 ----
-include::../../../project/OpenGLPaper/src/Window.cpp[tag=createWindow]
+include::../../../project/OpenGLPaper/src/Application.cpp[tag=set_up_window]
 ----
-====
+
+NOTE: All of the code is available on the https://github.com/Luktronic/OpenGL-Scientific-Paper[GitHub repository] cite:[PaperRepo] of this project!

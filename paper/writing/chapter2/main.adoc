@@ -51,13 +51,13 @@ OpenGL is not the only graphics rendering API on the market. Nowadays there are 
 
 |===
 
-.Basemark comparison of OpenGL, DirectX and Vulkan (Source: {author}, Data Source: link:https://www.guru3d.com/articles_pages/amd_radeon_rx_6800_xt_review,28.html[Basemark])
+.Basemark comparison of OpenGL, DirectX and Vulkan (Source: {author}, Data Source: guru3d.com cite:[BASEMARK])
 [graphviz_py, format=svg]
 ----
 include::../diagrams/comparison.py.dot[]
 ----
 
-This graph shows a benchmark test from link:https://www.guru3d.com/articles_pages/amd_radeon_rx_6800_xt_review,28.html[Basemark] footnote:[https://www.guru3d.com/articles_pages/amd_radeon_rx_6800_xt_review,28.html], where OpenGL, DirectX and Vulkan were benchmarked on different GPUs. The APIs were given points based on how well they performed.
+This graph shows a benchmark test made with **Basemark**cite:[BASEMARK], where OpenGL, DirectX and Vulkan were benchmarked on different GPUs. The APIs were given points based on how well they performed.
 
 The results show that OpenGL always performed the worst, sometimes by far (as seen on the _Radeon RX 6800 XT_ benchmark).
 
@@ -88,34 +88,3 @@ However, development of OpenGL has stopped some years ago, which is why OpenGL d
 |Large community
 |
 |===
-
-
-==== My Cite
-This is a citation. cite:[CRAFT]
-
-==== A formula
-latexmath:[\qquad \frac{a}{b} = 438]
-
-// A page break
-<<<
-
-==== A table
-.My new Table (Source: {author})
-[cols="1,1"]
-|===
-|Cell in column 1, row 1
-|Cell in column 2, row 1
-
-|Cell in column 1, row 2
-|Cell in column 2, row 2
-
-|Cell in column 1, row 3
-|Cell in column 2, row 3
-|===
-
-.My Python Code (Source: {author})
-[source,python,linenums=implicit]
-----
-if True:
-    print("Hello World")
-----
