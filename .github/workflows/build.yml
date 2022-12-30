@@ -26,14 +26,32 @@ jobs:
           lfs: true
 
       - name: Create build directory
-        run: mkdir -p /work/build
+        run: mkdir -p /work/paper/build
+
+      - name: Print stuff
+        run: ls -a
+      
+      - name: pwd
+        run: pwd 
+      
+      - name: go to paper
+        run: cd ./paper
+        shell: bash
+
+      - name: ls paper
+        run: ls -a
+        shell: bash
+
+      - name: pwd paper
+        run: pwd
+        shell: bash
 
       - name: Build PDF
-        run: cd ./paper && chmod +x ./scripts/asciidoc-to-pdf.sh && ./scripts/asciidoc-to-pdf.sh
+        run: cd ./paper && ls && chmod +x ./scripts/asciidoc-to-pdf.sh && ./scripts/asciidoc-to-pdf.sh
         shell: bash
 
       - name: Archive production artifacts
         uses: actions/upload-artifact@v2
         with:
           name: thesis
-          path: /work/build
+          path: /work/paper/build
