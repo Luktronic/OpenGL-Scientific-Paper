@@ -7,6 +7,8 @@ In those times, hardware performance was very limited. The mathematic calculatio
 
 The GPU is specialized in parallel computing of immense amounts of data, needed to calculate the colour of each pixel on the monitor. With that, digital images are created. This process is called *rendering*. A program which handles rendering is called a *renderer*.
 
+<<<
+
 === Rendering Basics
 
 ==== Graphics pipeline
@@ -20,6 +22,8 @@ Before an image can be rendered, the required data must undergo several differen
 
 There are multiple ways to render/process model data, such as *raytracing* or *raycasting*. The most common one however, is *polygon rendering*, which we will focus 
 on.
+
+<<<
 
 ==== Vertices
 
@@ -38,7 +42,7 @@ As the name suggests, polygon rendering breaks down geometry to the most simple 
 .A simple polygon (Source: {author})
 image::chapter1/Polygons.svg[width=80%,format=svg]
 
-In conclusion, polygons can be represented by only 3 vertices and are therefore the simplest geometric shape which defines a gemoetric area. Any other geometric shape can be constructed by putting several polygons together.
+In conclusion, polygons can be represented by only 3 vertices and are therefore the simplest geometric shape which defines a geometric area. Any other geometric shape can be constructed by putting several polygons together.
 
 ==== Shader
 
