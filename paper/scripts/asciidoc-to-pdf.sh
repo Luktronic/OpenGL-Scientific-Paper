@@ -8,15 +8,7 @@ mkdir -p $tmp_path
 
 cp -r . $tmp_path/
 
-echo "ls:"
-ls -a
-
-echo "pwd:"
-pwd
-
 cd $tmp_path/paper
-echo "ls tmp:"
-ls -a
 
 # Add path to allow imports
 export PYTHONPATH=$PYTHONPATH:$(pwd)/writing/diagrams
