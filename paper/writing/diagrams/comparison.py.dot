@@ -1,0 +1,14 @@
+digraph G {
+pad = 0.1;
+
+node [shape=none, width=7.2, height=7, fixedsize=true, imagescale=true];
+
+{{
+from generate_comparison import generate_0
+
+generate_0()
+
+}}
+
+A [image="/tmp/pre-build/writing/images/generated_comparison.png", label=""]
+}
