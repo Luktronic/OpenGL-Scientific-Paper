@@ -8,7 +8,15 @@ mkdir -p $tmp_path
 
 cp -r . $tmp_path/
 
-cd $tmp_path
+echo "ls:"
+ls -a
+
+echo "pwd:"
+pwd
+
+cd $tmp_path/paper
+echo "ls tmp:"
+ls -a
 
 # Add path to allow imports
 export PYTHONPATH=$PYTHONPATH:$(pwd)/writing/diagrams
@@ -22,7 +30,7 @@ asciidoctor-pdf \
 -o thesis.pdf \
 writing/main.adoc # --trace -v -w -t
 
-cp thesis.pdf /work/build/
+cp thesis.pdf /work/paper/build/
 
 echo "Building printed version..."
 asciidoctor-pdf \
@@ -34,6 +42,6 @@ asciidoctor-pdf \
 -a printed-version=true \
 writing/main.adoc # --trace -v -w -t
 
-cp thesis-printed.pdf /work/build/
+cp thesis-printed.pdf /work/paper/build/
 
 rm -rf $tmp_path

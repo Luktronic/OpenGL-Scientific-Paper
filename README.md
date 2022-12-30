@@ -36,7 +36,7 @@ The paper was written in [Asciidoc](https://asciidoc.org/), using [this](https:/
 
 Firstly, clone this GitHub repository recursively:
 
-```sh
+```console
 > git clone --recursive https://github.com/Luktronic/OpenGL-Scientific-Paper.git
 ```
 
@@ -58,7 +58,7 @@ Make sure you have cloned all the **submodules**. If you have not cloned this re
 
 Open the terminal (Powershell or CMD) in the `/project/setup` directory. After that, run the `setup.bat` file
 
-```sh
+```console
 > .\setup.bat
 ```
 
@@ -70,7 +70,7 @@ You can then simply run or build the project in Visual Studio by opening the `Op
 
 If you don't want to use Visual Studio, you can also build the project with `MsBuild`. Just type the following command into Powershell/CMD:
 
-```sh
+```console
 > msbuild .\OpenGLPaper.sln 
 ```
 

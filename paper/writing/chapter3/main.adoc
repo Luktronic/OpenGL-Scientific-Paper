@@ -1,0 +1,25 @@
+=== Setup
+
+In this example I will implement a simple rendering example using OpenGL in C++. As the windowing system I will use https://www.glfw.org/[GLFW] footnote:[https://www.glfw.org/], as well as https://glad.dav1d.de/[Glad] for loading the OpenGL functions.
+
+GLFW can be cloned from its https://github.com/glfw/glfw[GitHub repository] footnote:[https://github.com/glfw/glfw] and then be included in your project.
+
+Glad can be downloaded from https://glad.dav1d.de/[this] footnote:[https://glad.dav1d.de/] site. It can then be included manually in the project.
+
+I will not go into detail how to include libraries in C++.
+
+****
+The website https://learnopengl.com/[learnopengl.com] has a an https://learnopengl.com/Getting-started/Creating-a-window[in-depth guide] footnote:[https://learnopengl.com/Getting-started/Creating-a-window] about how to set up a project using the same libraries.
+****
+
+==== Creating a window
+
+At first, I created my own `Window` class, which should help us with managing our Window. In this class I created a function which creates a GLFW Window.
+
+.createWindow() function
+====
+[source, c++]
+----
+include::../../../project/OpenGLPaper/src/Window.cpp[tag=createWindow]
+----
+====

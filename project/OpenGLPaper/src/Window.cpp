@@ -25,6 +25,7 @@ namespace OpenGLTestProject {
 
 
 
+	// tag::createWindow[]
 	Window* Window::createWindow(int width, int height, const char* title, bool windowedFullscreen, bool isFullscreen) {
 
 		//Ensure that glfw uses opengl version 4.6
@@ -65,6 +66,7 @@ namespace OpenGLTestProject {
 
 		return window;
 	}
+	// end::createWindow[]
 
 
 	void Window::freeWindow(Window* window) {

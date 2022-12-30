@@ -2,9 +2,29 @@
 
 OpenGL is a cross-platform graphics rendering API. It provides an abstract specification for GPU interactions, such as functions and constants that can be called from code. Because of that, OpenGL is language independent.
 
-As mentioned, OpenGL only provides the definition of used functions. The implementation of said functions is fully delegated to the underlying <<Windowing System>>.
+As mentioned, OpenGL only provides the definition of used functions. The implementation of said functions is fully delegated to the underlying <<Windowing System>> and the PC's GPU driver.
 
-==== Comparison to other Rendering APIs
+=== Windowing System
+
+A windowing system is the software that manages a UI window. It handles all important aspects, such as window creation, rendering, inputs, events, and much more.
+
+There are many windowing systems that connect OpenGL to the underlying operating system. Here are a few examples:
+
+.Windowing Systems
+[cols="1,3"]
+|===
+|Name |Description
+
+|GLFW |Game-oriented cross-platform window and keyboard/mouse/joystick handler
+|FreeGLUT |Cross-platform window and keyboard/mouse handler, up to date alternative to GLUT
+|GLUT |Old and no longer maintained window handler
+|Simple DirectMedia Layer (SDL) |Cross-platform multimedia library with C API
+|SFML |Cross-platform multimedia library with C++ API and binding to other languages like Java, Go, Haskell or C#
+
+|===
+
+
+=== Comparison to other Rendering APIs
 
 OpenGL is not the only graphics rendering API on the market. Nowadays there are several options for choosing a graphics API, the most popular ones being *DirectX* for Windows (developed by *Microsoft*), *Metal* for Apple operating systems such as iOS or macOS (developed by *Apple*), and Vulkan, which is meant to be the modern successor of OpenGL (developed by the non-profit *Khronos Group*).
 
@@ -37,7 +57,38 @@ OpenGL is not the only graphics rendering API on the market. Nowadays there are 
 include::../diagrams/comparison.py.dot[]
 ----
 
-=== Windowing System
+This graph shows a benchmark test from link:https://www.guru3d.com/articles_pages/amd_radeon_rx_6800_xt_review,28.html[Basemark] footnote:[https://www.guru3d.com/articles_pages/amd_radeon_rx_6800_xt_review,28.html], where OpenGL, DirectX and Vulkan were benchmarked on different GPUs. The APIs were given points based on how well they performed.
+
+The results show that OpenGL always performed the worst, sometimes by far (as seen on the _Radeon RX 6800 XT_ benchmark).
+
+==== Why use OpenGL?
+
+As the graph above showed, OpenGL is definitely the worst performing modern graphics API. If that is the case, why should anyone use it?
+
+The answer to that question is simplicity. While it might be true that OpenGL is not the best API performance wise, it is the easiest to learn and use. This could be seen as a con as well, since OpenGL's abstraction takes away many details of the underlying hardware, resulting in less direct power over the hardware compared to other APIs.
+
+OpenGL is also widely supported, because it has been around in the industry for a long time. Because of that, there are many libraries and communities for OpenGL.
+
+However, development of OpenGL has stopped some years ago, which is why OpenGL does not have direct support for many modern features like *ray tracing*.
+
+.Pros and Cons of OpenGL
+[cols="1,1"]
+|===
+|Pros| Cons
+
+|Easy to use/learn
+|Abstraction takes away power over hardware
+
+|Widely supported
+|Development of new features stopped
+
+|Cross-platform
+|
+
+|Large community
+|
+|===
+
 
 ==== My Cite
 This is a citation. cite:[CRAFT]

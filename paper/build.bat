@@ -8,7 +8,7 @@ docker build -f asciidoc-to-pdf.Dockerfile -t thesis-ascii-to-pdf . || goto :err
 mkdir build
 
 echo Running asciidoc-to-pdf docker container...
-docker run --rm -v "%cd%/writing:/work/writing" -v "%cd%/assets:/work/assets" -v "%cd%/build:/work/build" thesis-ascii-to-pdf || goto :error
+docker run --rm -v "%cd%/writing:/work/paper/writing" -v "%cd%/../project/OpenGLPaper/src:/work/project/OpenGLPaper/src" -v "%cd%/assets:/work/paper/assets" -v "%cd%/build:/work/paper/build" thesis-ascii-to-pdf || goto :error
 
 echo Build done!
 

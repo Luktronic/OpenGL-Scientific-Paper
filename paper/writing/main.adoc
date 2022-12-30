@@ -16,6 +16,7 @@ endif::[]
 :stem: latexmath
 :mathematical-format: svg
 :imagesdir: images
+:source-language: c++
 :outdir: writing
 :icons: font
 :url-quickref: https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/
@@ -54,6 +55,14 @@ include::title/opengl-introduction.adoc[]
 <<<
 
 include::chapter2/main.adoc[]
+
+<<<
+
+include::title/opengl-rendering-example.adoc[]
+
+<<<
+
+include::chapter3/main.adoc[]
 
 <<<
 
