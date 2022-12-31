@@ -13,6 +13,7 @@ namespace OpenGLTestProject {
 		glfwSetMouseButtonCallback(glfwWindow, Input::mouseButtonCallback);
 		glfwSetScrollCallback(glfwWindow, Input::scrollCallback);
 		glfwSetCursorPosCallback(glfwWindow, Input::cursorPosCallback);
+		glfwSetFramebufferSizeCallback(glfwWindow, framebufferSizeCallback);
 	}
 
 	void Window::closeWindow() {
@@ -21,6 +22,14 @@ namespace OpenGLTestProject {
 			glfwSetWindowShouldClose(glfwWindow, GLFW_TRUE);
 		}
 
+	}
+
+	void Window::setViewport(int width, int height) {
+		framebufferSizeCallback(glfwWindow, width, height);
+	}
+
+	void Window::framebufferSizeCallback(GLFWwindow* window, int width, int height) {
+		glViewport(0, 0, width, height);
 	}
 
 	Window* Window::createWindow(int width, int height, const char* title, bool windowedFullscreen, bool isFullscreen) {
@@ -54,6 +63,9 @@ namespace OpenGLTestProject {
 			glfwTerminate();
 			return nullptr;
 		}
+
+		//Sets which part of the Window OpenGL is drawing to
+		glViewport(0, 0, width, height);
 
 		//Sets our window as current context
 		glfwMakeContextCurrent(window->glfwWindow);

@@ -3,14 +3,16 @@
 #include <GLFW/glfw3.h>
 #include "Input.h"
 #include "Window.h"
+#include "Renderer.h"
 
 using namespace OpenGLTestProject;
+
 
 
 const int windowWidth = 1280;
 const int windowHeigth = 720;
 const char* windowTitle = "OpenGL Test Project";
-const bool windowedFullscreen = true;
+const bool windowedFullscreen = false;
 const bool isFullscreen = false; //If this is true, window is always fullscreen (overrides windowedFullscreen)
 
 int exitWithError(const char* msg) {
@@ -36,15 +38,16 @@ int main() {
 		return exitWithError("Couldn't initialize glad!\n");
 	}
 
-	//Sets which part of the Window OpenGL is drawing to
-	glViewport(0, 0, windowWidth, windowHeigth);
-
 	printf("Window initialized successfully!\n");
+
+	Renderer::setupRenderer();
+	printf("Renderer setup successfully!\n");
+
 	//end::set_up_window[]
 	while (!glfwWindowShouldClose(window->glfwWindow)) {
 
 		//Sets the pixels to this color value when clearing the buffers with glClear()
-		glClearColor(111.0f / 255.0f, 84.0f / 255.0f, 76.0f / 255.0f, 1.0f);
+		glClearColor(237.0f / 255.0f, 223.0f / 255.0f, 215.0f / 255.0f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
 
 		if (Input::isKeyPressed(GLFW_KEY_ESCAPE))
@@ -55,6 +58,8 @@ int main() {
 		if (Input::isKeyPressed(GLFW_KEY_W)) {
 			printf("w has been pressed\n");
 		}
+
+		Renderer::drawTriangle();
 
 		glfwSwapBuffers(window->glfwWindow);
 		glfwPollEvents();
