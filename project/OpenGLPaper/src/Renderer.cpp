@@ -23,16 +23,22 @@ namespace OpenGLTestProject {
         unsigned int shaderProgram;
         unsigned int VAO; //ID of Vertex Array Object
 
-        void checkSuccess(unsigned int shader) {
+        void checkSuccess(unsigned int shader, int status) {
             int success;
             char infoLog[512];
-            glGetShaderiv(shader, GL_COMPILE_STATUS, &success);
+            if(status == GL_COMPILE_STATUS)
+                glGetShaderiv(shader, status, &success);
+            else if(status == GL_LINK_STATUS)
+                glGetProgramiv(shader, status, &success);
 
             if(!success) {
                 glGetShaderInfoLog(shader, 512, NULL, infoLog);
-                perror("SHADER COMPILATION ERROR\n");
-                perror(infoLog);
-                perror("\n");
+                printf("SHADER ERROR\n");
+                printf(infoLog);
+                printf("\n");
+            }
+            else {
+                printf("Shader %d successful for status %d!\n", shader, status);
             }
         }
 
@@ -41,7 +47,7 @@ namespace OpenGLTestProject {
             vertexShader = glCreateShader(GL_VERTEX_SHADER);
             glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
             glCompileShader(vertexShader);
-            checkSuccess(vertexShader);
+            checkSuccess(vertexShader, GL_COMPILE_STATUS);
             return vertexShader;
         }
 
@@ -50,7 +56,7 @@ namespace OpenGLTestProject {
             fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
             glShaderSource(fragmentShader, 1, &fragmentShaderSource, NULL);
             glCompileShader(fragmentShader);
-            checkSuccess(fragmentShader);
+            checkSuccess(fragmentShader, GL_COMPILE_STATUS);
             return fragmentShader;
         }
 
@@ -76,7 +82,7 @@ namespace OpenGLTestProject {
             glAttachShader(shaderProgram, vertexShader);
             glAttachShader(shaderProgram, fragmentShader);
             glLinkProgram(shaderProgram);
-            checkSuccess(shaderProgram);
+            checkSuccess(shaderProgram, GL_LINK_STATUS);
 
             glUseProgram(shaderProgram);
             glDeleteShader(vertexShader);

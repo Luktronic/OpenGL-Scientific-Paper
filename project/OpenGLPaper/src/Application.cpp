@@ -39,11 +39,11 @@ int main() {
 	}
 
 	printf("Window initialized successfully!\n");
+	//end::set_up_window[]
 
 	Renderer::setupRenderer();
 	printf("Renderer setup successfully!\n");
 
-	//end::set_up_window[]
 	while (!glfwWindowShouldClose(window->glfwWindow)) {
 
 		//Sets the pixels to this color value when clearing the buffers with glClear()
