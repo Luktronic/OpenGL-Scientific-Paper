@@ -9,11 +9,9 @@ supervised by +
 
 '''
 
-Submission Note
+This paper contains 18 pages of content. Including title pages, glossary, ..., the paper is 24 pages long.
 
-Date: [REPLACE WITH DATE]
-
-Signature:
+Date: 31/12/2022
 
 '''
 

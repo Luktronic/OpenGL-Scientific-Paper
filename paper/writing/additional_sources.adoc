@@ -12,4 +12,8 @@ Writing Tools::
 
 Font:: https://fonts.google.com/specimen/Roboto[Roboto], Apache License 2.0
 
-Another Source:: My text
+OpenGL Learning Resources:: 
+- https://learnopengl.com/[learnopengl.com]
+- https://www.khronos.org/opengl/wiki/Getting_Started[Official OpenGL Getting Started page]
+- https://www.youtube.com/playlist?list=PLlrATfBNZ98foTJPJ_Ev03o2oq3-GGOS2[The Cherno's OpenGL series on YouTube]
+- https://www.youtube.com/watch?v=45MIykWJ-C4[OpenGL Course by freeCodeCamp.org on YouTube]

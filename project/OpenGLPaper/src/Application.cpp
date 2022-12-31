@@ -44,8 +44,8 @@ int main() {
 	Renderer::setupRenderer();
 	printf("Renderer setup successfully!\n");
 
+	//tag::renderloop[]
 	while (!glfwWindowShouldClose(window->glfwWindow)) {
-
 		//Sets the pixels to this color value when clearing the buffers with glClear()
 		glClearColor(237.0f / 255.0f, 223.0f / 255.0f, 215.0f / 255.0f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
@@ -55,15 +55,12 @@ int main() {
 			window->closeWindow();
 		}
 
-		if (Input::isKeyPressed(GLFW_KEY_W)) {
-			printf("w has been pressed\n");
-		}
-
 		Renderer::drawTriangle();
 
 		glfwSwapBuffers(window->glfwWindow);
 		glfwPollEvents();
 	}
+	//end::renderloop[]
 
 	Window::freeWindow(window);
 	glfwTerminate();

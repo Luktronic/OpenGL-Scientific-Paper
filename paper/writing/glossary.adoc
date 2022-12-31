@@ -1,4 +1,10 @@
 == Glossary
 // SORT BY ABC, https://wordcounter.net/alphabetize
 API:: Application Programming Interface
-HW:: Hello World
+CLI:: Command Line Interface
+GLSL:: OpenGL Shading Language
+GPU:: Graphics Processing Unit
+GUI:: Graphical User Interface
+OS:: Operating System
+VAO:: Vertex Array Object
+VBO:: Vertex Buffer Object

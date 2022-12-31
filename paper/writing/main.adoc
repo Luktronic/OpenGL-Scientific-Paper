@@ -9,7 +9,7 @@ ifndef::printed-version[]
 :pdf-theme: assets/theme.yml
 endif::[]
 :doctype: book
-:!chapter-signifier:
+:chapter-signifier:
 :toc: macro
 :toclevels: 2
 :math:
@@ -37,6 +37,10 @@ include::cover.adoc[]
 <<<
 
 toc::[]
+
+<<<
+
+include::abstract.adoc[]
 
 <<<
 
@@ -77,13 +81,10 @@ list-of::table[enhanced_rendering=true]
 == List of code snippets
 list-of::listing[enhanced_rendering=true]
 
-[bibliography]
-== References
-//[[[basemark, 1]]] https://www.guru3d.com/articles_pages/amd_radeon_rx_6800_xt_review,28.html
-bibliography::[]
+include::additional_sources.adoc[]
 
 <<<
 
-include::additional_sources.adoc[]
-
-
+[bibliography]
+== References
+bibliography::[]

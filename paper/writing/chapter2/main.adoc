@@ -6,12 +6,10 @@ As mentioned, OpenGL only provides the definition of used functions. The impleme
 
 === Windowing System
 
-A windowing system is the software that manages a UI window. It handles all important aspects, such as window creation, rendering, inputs, events, and much more.
-
-There are many windowing systems that connect OpenGL to the underlying operating system. Here are a few examples:
+A windowing system is the software that manages a UI window. It handles all important aspects, such as window creation, rendering, inputs, events, and much more. There are many windowing systems that connect OpenGL to the underlying operating system. Here are a few examples:
 
 .Windowing Systems
-[cols="1,3"]
+[cols="5,13"]
 |===
 |Name |Description
 

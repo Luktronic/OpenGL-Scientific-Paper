@@ -1,18 +1,26 @@
+=== Preamble
+
+The following code examples will give a rough guideline on how a simple polygon renderer using OpenGL could look like. I will not provide the *complete* code. Copying all the code examples in the following chapters will not result in a functional project.
+
+The full code of the used project can be viewed on the project's https://github.com/Luktronic/OpenGL-Scientific-Paper[GitHub repository] cite:[PaperRepo].
+
+For additional resources, look at <<References>> and <<Additional Sources & Information>>.
+
 === Setup
 
-In this example I will implement a simple rendering example using OpenGL in C++. As the windowing system I will use https://www.glfw.org/[GLFW] cite:[GLFW], as well as https://glad.dav1d.de/[Glad] for loading the OpenGL functions.
+In this showcase I will implement a simple rendering example using OpenGL in C++. As the windowing system I will use https://www.glfw.org/[GLFW] as well as https://glad.dav1d.de/[Glad] for loading the OpenGL functions.
 
-GLFW can be cloned from its https://github.com/glfw/glfw[GitHub repository] cite:[GLFWREPO] and then be included in your project.
+GLFW cite:[glfwsite] can be cloned from its https://github.com/glfw/glfw[GitHub repository] cite:[glfwrepo] and then be included in your project.
 
 Glad can be downloaded from https://glad.dav1d.de/[this] cite:[Glad] site. It can then be included manually in the project.
 
 I will not go into detail how to include libraries in C++.
 
 ****
-The website https://learnopengl.com/[learnopengl.com] has a an https://learnopengl.com/Getting-started/Creating-a-window[in-depth guide] cite:[LearnOpenGl] about how to set up a project using the same libraries.
+The website https://learnopengl.com/[learnopengl.com] has an https://learnopengl.com/Getting-started/Creating-a-window[in-depth guide] cite:[LearnOpenGl] about how to set up a project using the same libraries.
 ****
 
-==== Creating a window
+=== Creating a window
 
 At first, I created my own `Window` class, which should help us with managing our Window. In this class I created a function which creates a GLFW Window.
 
@@ -24,4 +32,103 @@ Using this class, I am creating a new GLFW window and setting it up properly.
 include::../../../project/OpenGLPaper/src/Application.cpp[tag=set_up_window]
 ----
 
-NOTE: All of the code is available on the https://github.com/Luktronic/OpenGL-Scientific-Paper[GitHub repository] cite:[PaperRepo] of this project!
+=== Setting up the Renderer
+
+Now that the window setup is complete, I can start creating a simple renderer which renders a polygon.
+
+==== Creating the Vertices
+
+At first, I need to define the vertices of the polygon that I want to render. 
+
+.Defining the vertices
+[source, c++, indent=0]
+----
+include::../../../project/OpenGLPaper/src/Renderer.cpp[tag=vertices]
+----
+
+Here I defined the vertex coordinates (represented as x, y, z). The range of the coordinates goes from ``-1.0`` to ``1.0``, ``-1.0`` being the far left of the window and ``1.0`` being the far right. The 3 vertices I defined would create a polygon in the middle of the screen.
+
+
+Next, I create a **vertex buffer object**. The VBO is the object that contains our vertex data and gets bound to OpenGL
+
+.Creating the Vertex Buffer Object
+[source, c++, indent=0]
+----
+include::../../../project/OpenGLPaper/src/Renderer.cpp[tag=vbo]
+----
+
+Lastly, I create a **vertex array object**, which is an array that contains VBOs and sends them to OpenGL.
+
+.Creating the Vertex Array Object
+[source, c++, indent=0]
+----
+include::../../../project/OpenGLPaper/src/Renderer.cpp[tag=vao]
+----
+
+==== Creating the Shaders
+
+At first, I write a valid vertex shader in the OpenGL Shading Language (GLSL).
+
+.Vertex Shader Code
+[source, hlsl, indent=0]
+----
+#version 460 core
+layout (location = 0) in vec3 aPos;
+
+void main()
+{
+    gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);
+}
+----
+
+Then I pass the shader source code as a string to OpenGL.
+
+.Passing the Vertex Shader to OpenGL
+[source, c++, indent=0]
+----
+include::../../../project/OpenGLPaper/src/Renderer.cpp[tag=setupvertex]
+----
+
+Then I repeat the same thing for the following Fragment Shader:
+
+.Fragment Shader Code
+[source, hlsl indent=0]
+----
+#version 460 core
+out vec4 FragColor;
+
+void main()
+{
+    FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);
+} 
+----
+
+In the end, I create the Shader Program that contains all the used shaders and gets linked by OpenGL.
+
+.Creating and linking the Shader Program
+[source, c++, indent=0]
+----
+include::../../../project/OpenGLPaper/src/Renderer.cpp[tag=shaderprogram]
+----
+
+=== Rendering Loop
+
+At last, I implement a while loop that keeps rendering the polygon until the window is closed.
+
+.Render loop
+[source, c++, indent=0]
+----
+include::../../../project/OpenGLPaper/src/Application.cpp[tag=renderloop]
+----
+
+With `glClearColor()` I set the "base" color of the rendered image (the colour that OpenGL draws when the pixel is not part of any other render object).
+
+With `glSwapBuffers()`, I switch the front and back buffers of the image. This means that the last image of the window will get replaced by the newly rendered one.
+
+<<<
+
+=== Result
+
+When running the project now, a window opens with the following render:
+
+image::chapter3/final-render.png[]

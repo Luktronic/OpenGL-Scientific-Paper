@@ -5,7 +5,7 @@ namespace OpenGLTestProject {
     namespace Renderer
     {
         const char* vertexShaderSource = 
-            "#version 330 core\n"
+            "#version 460 core\n"
             "layout (location = 0) in vec3 aPos;\n"
             "void main()\n"
             "{\n"
@@ -13,7 +13,7 @@ namespace OpenGLTestProject {
             "}\0";
 
         const char* fragmentShaderSource = 
-            "#version 330 core\n"
+            "#version 460 core\n"
             "out vec4 FragColor;\n"
             "void main()\n"
             "{\n"
@@ -43,12 +43,14 @@ namespace OpenGLTestProject {
         }
 
         unsigned int setupVertex() {
+            //tag::setupvertex[]
             unsigned int vertexShader; //id of vertex shader
             vertexShader = glCreateShader(GL_VERTEX_SHADER);
             glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
             glCompileShader(vertexShader);
             checkSuccess(vertexShader, GL_COMPILE_STATUS);
             return vertexShader;
+            //end::setupvertex[]
         }
 
         unsigned int setupFragment() {
@@ -61,22 +63,37 @@ namespace OpenGLTestProject {
         }
 
         void Renderer::setupRenderer() {
-            float vertices[] = {
-                -0.5f, -0.5f, 0.0f,
-                 0.5f, -0.5f, 0.0f,
-                 0.0f,  0.5f, 0.0f
-            };
 
+            // tag::vertices[]
+            float vertices[] = {
+                -0.5f, -0.5f, 0.0f, //Bottom left
+                 0.5f, -0.5f, 0.0f, //Bottom Right
+                 0.0f,  0.5f, 0.0f //Top
+            };
+            // end::vertices[]
+
+            // tag::vbo[]
             unsigned int VBO; //id of Vertex Buffer Object
             glGenBuffers(1, &VBO);
-            glBindBuffer(GL_ARRAY_BUFFER, VBO);
+            glBindBuffer(GL_ARRAY_BUFFER, VBO); //Set OpenGL's array buffer to our VBO
 
             glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+            // end::vbo[]
+
+            // tag::vao[]
+            glGenVertexArrays(1, &VAO);  
+
+            glBindVertexArray(VAO);
+            // Set vertex attributes pointers
+            glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+            glEnableVertexAttribArray(0);
+            // end::vao[]
 
             unsigned int vertexShader, fragmentShader; //IDs of the shaders
             vertexShader = setupVertex();
             fragmentShader = setupFragment();
 
+            // tag::shaderprogram[]
             shaderProgram = glCreateProgram();
 
             glAttachShader(shaderProgram, vertexShader);
@@ -87,16 +104,7 @@ namespace OpenGLTestProject {
             glUseProgram(shaderProgram);
             glDeleteShader(vertexShader);
             glDeleteShader(fragmentShader);
-
-            glGenVertexArrays(1, &VAO);  
-
-            glBindVertexArray(VAO);
-            // Copy vertices array in a buffer for OpenGL to use
-            glBindBuffer(GL_ARRAY_BUFFER, VBO);
-            glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-            // Set vertex attributes pointers
-            glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
-            glEnableVertexAttribArray(0);
+            // end::shaderprogram[]
         }
 
         void Renderer::drawTriangle() {
