@@ -19,10 +19,10 @@ asciidoctor-pdf \
 -r asciidoctor-mathematical \
 -r asciidoctor-bibtex \
 -r asciidoctor-lists \
--o thesis.pdf \
+-o OpenGL-Scientific-Paper.pdf \
 writing/main.adoc # --trace -v -w -t
 
-cp thesis.pdf /work/paper/build/
+cp OpenGL-Scientific-Paper.pdf /work/paper/build/
 
 echo "Building printed version..."
 asciidoctor-pdf \
@@ -30,10 +30,10 @@ asciidoctor-pdf \
 -r asciidoctor-mathematical \
 -r asciidoctor-bibtex \
 -r asciidoctor-lists \
--o thesis-printed.pdf \
+-o OpenGL-Scientific-Paper-printed.pdf \
 -a printed-version=true \
 writing/main.adoc # --trace -v -w -t
 
-cp thesis-printed.pdf /work/paper/build/
+cp OpenGL-Scientific-Paper-printed.pdf /work/paper/build/
 
 rm -rf $tmp_path
